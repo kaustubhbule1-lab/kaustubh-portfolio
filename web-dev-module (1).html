@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development — Kaustubh Bule</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--accent:#6c63ff;--text:#e8e8f0;--muted:#888899;--border:rgba(108,99,255,0.2)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif}
+nav{position:sticky;top:0;z-index:99;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(10,10,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}.nav-logo img{height:38px;width:38px;object-fit:contain;border-radius:8px}
+.nav-logo span{font-family:'Syne',sans-serif;font-weight:700;color:var(--accent);font-size:.95rem}
+.nav-back{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s;border:1px solid var(--border);padding:8px 16px;border-radius:8px}
+.nav-back:hover{color:var(--text);border-color:var(--accent)}
+.page-header{padding:72px 32px 48px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 60% 50%,rgba(108,99,255,.08) 0%,transparent 60%)}
+.page-header-inner{max-width:1100px;margin:0 auto}
+.breadcrumb{color:var(--muted);font-size:.82rem;margin-bottom:14px}.breadcrumb a{color:var(--accent);text-decoration:none}
+.page-header h1{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;margin-bottom:10px}
+.page-header p{color:var(--muted);max-width:520px;line-height:1.7}
+.days-wrapper{max-width:1100px;margin:0 auto;padding:48px 32px}
+.day-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;margin-bottom:24px;overflow:hidden;transition:border-color .2s}
+.day-card:hover{border-color:rgba(108,99,255,.5)}
+.day-header{display:flex;align-items:center;gap:14px;padding:18px 24px;cursor:pointer;background:var(--surface2);user-select:none}
+.day-num{background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:.8rem;padding:5px 12px;border-radius:20px;white-space:nowrap}
+.day-title{font-weight:700;font-size:.95rem;flex:1}
+.day-toggle{color:var(--muted);font-size:1.1rem;transition:transform .3s}
+.day-card.open .day-toggle{transform:rotate(180deg)}
+.day-body{display:none;padding:24px}
+.day-card.open .day-body{display:block}
+.day-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.day-screenshot img{width:100%;border-radius:10px;border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.day-learnings h4{font-weight:700;margin-bottom:12px;color:var(--accent);font-size:.9rem}
+.day-learnings ul{list-style:none;padding:0}
+.day-learnings ul li{padding:9px 12px;background:var(--surface2);border-radius:8px;margin-bottom:7px;font-size:.86rem;color:var(--muted);border-left:3px solid var(--accent);line-height:1.5}
+.day-learnings ul li strong{color:var(--text)}
+@media(max-width:768px){
+  nav{padding:12px 16px}.nav-logo span{display:none}
+  .page-header{padding:52px 16px 36px}.days-wrapper{padding:32px 16px}
+  .day-grid{grid-template-columns:1fr}.day-header{padding:14px 16px}.day-body{padding:16px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo.jpeg" alt="FabLab">
+    <span>FabLab Portfolio</span>
+  </a>
+  <a href="index.html" class="nav-back">← Back</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> → Modules → Web Development</div>
+    <h1>🌐 Web Development</h1>
+    <p>7-day journey through HTML, CSS, and JavaScript — building from basics to interactive web projects.</p>
+  </div>
+</div>
+
+<div class="days-wrapper">
+
+  <div class="day-card open">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-num">Day 1</span>
+      <span class="day-title">HTML Basics — Structure &amp; Tags</span>
+      <span class="day-toggle">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="day-grid">
+        <div class="day-screenshot"><img src="day_1.jpeg" alt="Day 1" loading="lazy"></div>
+        <div class="day-learnings">
+          <h4>What I Learned</h4>
+          <ul>
+            <li><strong>HTML Structure:</strong> DOCTYPE, html, head, body tags</li>
+            <li><strong>Headings &amp; Paragraphs:</strong> h1–h6, p tags</li>
+            <li><strong>Links &amp; Images:</strong> anchor href, img src and alt</li>
+            <li><strong>Lists:</strong> Ordered (ol) and unordered (ul) with li</li>
+            <li><strong>Tables:</strong> table, tr, th, td for structured data</li>
+            <li><strong>Semantic HTML:</strong> Importance of meaningful tags</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-num">Day 2</span>
+      <span class="day-title">HTML Forms — User Input Elements</span>
+      <span class="day-toggle">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="day-grid">
+        <div class="day-screenshot"><img src="day_2.jpeg" alt="Day 2" loading="lazy"></div>
+        <div class="day-learnings">
+          <h4>What I Learned</h4>
+          <ul>
+            <li><strong>Form Elements:</strong> input, textarea, select, button</li>
+            <li><strong>Input Types:</strong> text, password, email, date, file</li>
+            <li><strong>Radio &amp; Checkbox:</strong> Single and multiple selection</li>
+            <li><strong>Dropdown:</strong> select with multiple option elements</li>
+            <li><strong>Form Validation:</strong> required attribute and constraints</li>
+            <li><strong>Labels:</strong> Associating labels with inputs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-num">Day 3</span>
+      <span class="day-title">CSS Basics — Styling &amp; Selectors</span>
+      <span class="day-toggle">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="day-grid">
+        <div class="day-screenshot"><img src="day_3.jpeg" alt="Day 3" loading="lazy"></div>
+        <div class="day-learnings">
+          <h4>What I Learned</h4>
+          <ul>
+            <li><strong>CSS Selectors:</strong> Element, Class (.class), ID (#id)</li>
+            <li><strong>Colors:</strong> Names, hex codes, and rgb() values</li>
+            <li><strong>Typography:</strong> font-family, size, weight, text-align</li>
+            <li><strong>Box Model:</strong> margin, padding, border properties</li>
+            <li><strong>Specificity:</strong> Which CSS rules take priority</li>
+            <li><strong>Inline vs External CSS:</strong> Different styling approaches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-num">Day 4</span>
+      <span class="day-title">CSS Layout — Flexbox &amp; Positioning</span>
+      <span class="day-toggle">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="day-grid">
+        <div class="day-screenshot"><img src="day_4.jpeg" alt="Day 4" loading="lazy"></div>
+        <div class="day-learnings">
+          <h4>What I Learned</h4>
+          <ul>
+            <li><strong>Flexbox Container:</strong> display:flex, flex-direction, justify-content</li>
+            <li><strong>Flex Items:</strong> flex-grow, flex-shrink, flex-basis</li>
+            <li><strong>Space Distribution:</strong> space-between, space-around, space-evenly</li>
+            <li><strong>Wrapping:</strong> flex-wrap for responsive layouts</li>
+            <li><strong>Alignment:</strong> Centering elements both directions</li>
+            <li><strong>Practical Layout:</strong> Built multi-column box layout</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-num">Day 5</span>
+      <span class="day-title">HTML Project — Virat Kohli Documentary Page</span>
+      <span class="day-toggle">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="day-grid">
+        <div class="day-screenshot"><img src="day_5.jpeg" alt="Day 5" loading="lazy"></div>
+        <div class="day-learnings">
+          <h4>What I Learned</h4>
+          <ul>
+            <li><strong>Page Structure:</strong> Building a multi-section webpage</li>
+            <li><strong>Navigation Bar:</strong> Anchor-based navigation links</li>
+            <li><strong>Content Layout:</strong> Intro, career highlights, image sections</li>
+            <li><strong>Applying Styles:</strong> Background, fonts, margin/padding</li>
+            <li><strong>Embedding Images:</strong> img tags with sizing and positioning</li>
+            <li><strong>Project Practice:</strong> Combining HTML + CSS in a real page</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-num">Day 6</span>
+      <span class="day-title">JavaScript Basics — Variables &amp; Data Types</span>
+      <span class="day-toggle">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="day-grid">
+        <div class="day-screenshot"><img src="day_6.jpeg" alt="Day 6" loading="lazy"></div>
+        <div class="day-learnings">
+          <h4>What I Learned</h4>
+          <ul>
+            <li><strong>Variables:</strong> var, let, const and their differences</li>
+            <li><strong>Data Types:</strong> String, Number, Boolean in JS</li>
+            <li><strong>String Operations:</strong> Concatenation and type coercion</li>
+            <li><strong>Boolean Arithmetic:</strong> true/false addition and multiplication</li>
+            <li><strong>typeof Operator:</strong> Checking data type of a variable</li>
+            <li><strong>console.log:</strong> Printing output to the browser console</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header" onclick="toggle(this)">
+      <span class="day-num">Day 7</span>
+      <span class="day-title">JavaScript Project — To-Do List App</span>
+      <span class="day-toggle">▼</span>
+    </div>
+    <div class="day-body">
+      <div class="day-grid">
+        <div class="day-screenshot"><img src="day_7.jpeg" alt="Day 7" loading="lazy"></div>
+        <div class="day-learnings">
+          <h4>What I Learned</h4>
+          <ul>
+            <li><strong>DOM Manipulation:</strong> Selecting and modifying HTML elements</li>
+            <li><strong>Event Listeners:</strong> Adding click events to buttons</li>
+            <li><strong>Dynamic Content:</strong> Creating and appending new list items</li>
+            <li><strong>Input Handling:</strong> Reading user input from text fields</li>
+            <li><strong>Project Integration:</strong> HTML + CSS + JS in one working app</li>
+            <li><strong>User Experience:</strong> Building an interactive web application</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggle(header){
+  const card = header.closest('.day-card');
+  card.classList.toggle('open');
+}
+</script>
+</body>
+</html>
